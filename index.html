@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+
+    <style>
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(image/back.jpg);
+        background-size: cover;
+        padding: 3%;
+    }
+
+
+    #container {
+       display: flex;
+       height: 100%;
+       width: 100%;
+       justify-content: space-around;
+       align-content: space-around;
+       align-items: center;
+       flex-direction: column;
+       /* border: 4px solid red;*/
+    }
+
+    .container-class {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #container-0 {
+        display: flex;
+        height: 100%;
+       width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    
+    }
+
+    #container-1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #container-2 {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .player-container {
+        background: #F0C27B;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+   #player-0-container {
+     margin-bottom: 30px;
+    }   
+
+    #player-1-container {
+        margin-bottom: 30px;
+     
+    }  
+
+    .player {
+        height: 200px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+    #functional-part {
+        display: flex;
+        height: 100%;
+        width: 100px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+       /* background-color: darkmagenta;*/
+    }
+
+    #dice-image {
+     height: 50px;
+     width: 50px;
+    }
+
+    .active {
+	animation:blinkingText 1s infinite;
+            }
+
+        @keyframes blinkingText{
+      	0%{		color: rgb(62, 213, 240);	}
+	    49%{	color: transparent;	}
+	    50%{	color: transparent;	}
+	    99%{	color:transparent;	}
+	    100%{	color: rgb(62, 213, 240);	}
+              }
+
+    .current-score {
+    
+        padding: 10px;
+        background: #FDC830;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       }
+
+    .current-score-class {
+        margin-left: 45%;
+        font-size: 1.5em;
+    }
+
+    .player-score-class {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .current-score {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.3em;
+        border-radius: 10px;
+    }
+
+    .global-score {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 5em;
+    }
+
+    .player-name {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2em;  
+    }
+
+    .winner {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 3em;
+        color: rgb(247, 3, 3);
+        background-color: rgb(201, 190, 41);
+        padding: 10px;
+    }
+
+    .player-score-class {
+        display: flex;
+        /*height: 60%;*/
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .super-men {
+        display: flex;
+
+    }
+
+    a {
+    color:white;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+ </style>
+ 
+</head>
+<body>
+
+    <div class="super-men">
+    <div id="container" class="main-container-class">
+
+    <div id='container-0' class="container-class">
+  
+
+<div id="player-0-container" class="player-container player">
+
+    <div class="player-name-class">
+<div id="player-0" name='player-name-0' class="  player-name"><b><span class="glyphicon glyphicon-hand-right"></span> Player-1</b></div>
+</div>
+
+<div class="player-score-class">
+
+<div id="global-score-0" class="text-default global-score"><b>0</b></div>
+<div class="current-score text-danger">
+    <b><i>
+    <p class="current-score-label">Current-Score</p>
+    <p id="current-score-0" class="current-score-class">0</p>
+</i></b>
+</div>
+</div>
+</div>
+
+<div id="player-1-container" class="player-container player">
+
+<div class="player-name-class">
+
+        <div id="player-1" name='player-name-1' class="  player-name"><b><span class="glyphicon glyphicon-hand-right"></span> Player-2</b></div>
+    </div>
+
+    <div class="player-score-class">
+
+        <div id="global-score-1" class="text-default global-score"><b>0</b></div>
+        <div class="current-score text-danger">
+            <b><i>
+            <p class="current-score-label">Current-Score</p>
+            <p id="current-score-1" class="current-score-class">0</p>
+        </i></b>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+
+    <div id="container-2" class="container-class">
+
+<div id="player-2-container" class="player-container player">
+
+<div class="player-name-class">
+
+        <div id="player-2" name='player-name-2' class=" player-name"> <b>  <span class="glyphicon glyphicon-hand-right"></span> Player-3</b> </div>
+    </div>
+
+    <div class="player-score-class">
+
+
+        <div id="global-score-2" class="text-default global-score"><b>0</b></div>
+        <div class="current-score text-danger">
+            <b> <i>
+                <p class="current-score-label">Current-Score</p>
+                <p id="current-score-2" class="current-score-class">0</p>
+            </i> </b>
+            </div>
+        </div>
+</div>
+
+<div id="player-3-container" class="player-container player">
+
+<div class="player-name-class">
+
+        <div id="player-3" name='player-name-3' class=" player-name"> <b>  <span class="glyphicon glyphicon-hand-right"></span> Player-4</b> </div>
+    </div>
+
+    <div class="player-score-class">
+
+        <div id="global-score-3" class="text-default global-score"><b>0</b></div>
+        <div class="current-score text-danger">
+            <b> <i>
+                <p class="current-score-label">Current-Score</p>
+                <p id="current-score-3" class="current-score-class">0</p>
+            </i> </b>
+            </div>
+        </div>
+</div>
+</div>
+</div>  <!--end of container div tag -->
+
+<div id="container-1" class="container-class">
+        <div id="functional-part" class="">
+
+                <button type="button" class="btn btn-danger" id="new-game">  <span class="glyphicon glyphicon-plus-sign" ></span>    <b>New-Game</b></button>
+
+                <button type="button" class="btn btn-danger" id="choose-player">  <span class="glyphicon glyphicon-refresh"></span>   <a href="root.html">Choose Player</a> </button>
+
+                <div>
+                <img src="image\default-dice.png" alt="dice image" id="dice-image">
+                </div>
+
+                <button type="button"
+                  class="btn btn-info" id="roll-dice">  <span class="glyphicon glyphicon-repeat"></span>  <b>Roll Dice</b></button>
+
+                <button type="button" 
+                 class="btn btn-success" id="hold"><b> <span class="glyphicon glyphicon-save"></span>     Hold</b></button>
+
+            </div>
+     </div>
+    </div>  <!--end of container div tag -->
+
+    
+<script src="diceapp.js"></script>
+</body>
+</html>
